@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Caina Self-Paced Course – Lesson 1: Alphabet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin: 20px;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 6px;
+    }
+    th {
+      background-color: #eee;
+    }
+    .practice {
+      border: 1px solid #ccc;
+      padding: 12px;
+      background-color: #f9f9f9;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 6px;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Caina Self-Paced Course</h1>
+<h2>Lesson 1: The Alphabet</h2>
+
+<p>
+Welcome to Lesson 1! Today you’ll learn the Caina alphabet, how each letter sounds,
+and practice reading real Caina words.
+</p>
+
+<a href="Nathan language learning.html">Back to Home</a>
+
+<hr>
+
+<h2>1. The Caina Alphabet</h2>
+
+<p>The alphabet uses simple, clear sounds. Here is the full chart:</p>
+<h2>Audio Lesson: Alphabet Pronunciation</h2>
+<p>Tap play to hear the alphabet sounds taught by the instructor.</p>
+
+<audio controls>
+  <source src="alphabet-sounds.mp3.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<table>
+  <tr>
+    <th>Letter</th>
+    <th>Sound</th>
+    <th>Example Word</th>
+    <th>Meaning</th>
+  </tr>
+  <tr><td>A</td><td>ah</td><td>aba</td><td>(example)</td></tr>
+  <tr><td>B</td><td>b</td><td>bacina</td><td>a feather</td></tr>
+  <tr><td>C</td><td>k</td><td>caina</td><td>the language</td></tr>
+  <tr><td>D</td><td>d</td><td>daba</td><td>a small tool</td></tr>
+  <tr><td>E</td><td>eh</td><td>eaba</td><td>water</td></tr>
+  <tr><td>F</td><td>f</td><td>faba</td><td>fire</td></tr>
+  <tr><td>G</td><td>g</td><td>gaba</td><td>ground</td></tr>
+  <tr><td>H</td><td>h</td><td>haba</td><td>air</td></tr>
+  <tr><td>I</td><td>ee</td><td>iaba</td><td>light</td></tr>
+  <tr><td>J</td><td>j</td><td>jaba</td><td>a tool</td></tr>
+</table>
+
+<hr>
+
+<h2>2. Example Words</h2>
+
+<p>Try sounding these out using the alphabet:</p>
+
+<ul>
+  <li><strong>bacina</strong> – bah-SEE-nah – a feather</li>
+  <li><strong>faba</strong> – FAH-bah – fire</li>
+  <li><strong>eaba</strong> – EH-ah-bah – water</li>
+  <li><strong>gaba</strong> – GAH-bah – ground</li>
+</ul>
+
+<hr>
+
+<h2>3. Interactive Practice</h2>
+
+<div class="practice">
+  <h3>Practice 1: Match the Letter to the Sound</h3>
+  <p>Type the correct sound for each vowel:</p>
+
+  <p>A = <input id="aSound" type="text" size="10"></p>
+  <p>E = <input id="eSound" type="text" size="10"></p>
+  <p>I = <input id="iSound" type="text" size="10"></p>
+  <p>O = <input id="oSound" type="text" size="10"></p>
+  <p>U = <input id="uSound" type="text" size="10"></p>
+
+  <button onclick="checkSounds()">Check Answers</button>
+  <p id="soundResult"></p>
+</div>
+
+<script>
+function checkSounds() {
+  let correct = { a:"ah", e:"eh", i:"ee", o:"oh", u:"oo" };
+  let score = 0;
+
+  if (document.getElementById("aSound").value.toLowerCase().includes(correct.a)) score++;
+  if (document.getElementById("eSound").value.toLowerCase().includes(correct.e)) score++;
+  if (document.getElementById("iSound").value.toLowerCase().includes(correct.i)) score++;
+  if (document.getElementById("oSound").value.toLowerCase().includes(correct.o)) score++;
+  if (document.getElementById("uSound").value.toLowerCase().includes(correct.u)) score++;
+
+  document.getElementById("soundResult").innerHTML =
+    "You got " + score + "/5 correct!";
+}
+</script>
+
+<div class="practice">
+  <h3>Practice 2: Hear the Words</h3>
+  <p>Tap a word to hear its pronunciation.</p>
+
+  <button onclick="alert('bah-SEE-nah')">bacina</button>
+  <button onclick="alert('FAH-bah')">faba</button>
+  <button onclick="alert('EH-ah-bah')">eaba</button>
+  <button onclick="alert('GAH-bah')">gaba</button>
+</div>
+
+<div class="practice">
+  <h3>Practice 3: Create Your Own Word</h3>
+  <p>Make a new Caina word and choose a meaning.</p>
+
+  <p>New word: <input id="newWord" type="text" size="15"></p>
+  <p>Meaning: <input id="newMeaning" type="text" size="25"></p>
+
+  <button onclick="saveWord()">Save</button>
+  <p id="savedWord"></p>
+</div>
+
+<script>
+function saveWord() {
+  let w = document.getElementById("newWord").value.trim();
+  let m = document.getElementById("newMeaning").value.trim();
+
+  if (!w || !m) {
+    document.getElementById("savedWord").innerHTML =
+      "Please enter both a word and a meaning.";
+    return;
+  }
+
+  document.getElementById("savedWord").innerHTML =
+    "Saved! <strong>" + w + "</strong> = " + m;
+}
+</script>
+
+<hr>
+
+
+<a href="Nathan language learning.html">Back to Home</a>
+<h2>4. Next Lesson</h2>
+<p>When you're ready, continue to Lesson 2: Basic Words.</p>
+</body>
+</html>
